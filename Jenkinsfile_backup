@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Introduce an error (invalid command)
-                sh 'invalid_command_here'
+                // Introduce a forced error (invalid command)
+                sh 'exit 1'
             }
         }
         stage('Deploy') {
@@ -24,3 +24,4 @@ pipeline {
         }
     }
 }
+
