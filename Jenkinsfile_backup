@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                // Introduce an error (wrong command)
+                // Introduce an error (invalid command)
                 sh 'invalid_command_here'
             }
         }
@@ -20,7 +20,7 @@ pipeline {
     }
     post {
         failure {
-            echo 'Pipeline failed!'
+            echo 'Pipeline failed due to an error!'
         }
     }
 }
